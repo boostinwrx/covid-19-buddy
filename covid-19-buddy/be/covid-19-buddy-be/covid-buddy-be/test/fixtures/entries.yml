@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temp: 1.5
+  tempunit: MyString
+  symptoms: MyString
+  med: MyString
+  dose: 1.5
+  doseunit: MyString
+  time: 2020-03-31 14:30:59
+  date: 2020-03-31
+
+two:
+  temp: 1.5
+  tempunit: MyString
+  symptoms: MyString
+  med: MyString
+  dose: 1.5
+  doseunit: MyString
+  time: 2020-03-31 14:30:59
+  date: 2020-03-31

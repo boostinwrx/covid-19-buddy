@@ -1,0 +1,134 @@
+  [1m[35m (168.7ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_development" ENCODING = 'unicode'[0m
+  [1m[35m (169.5ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_test" ENCODING = 'unicode'[0m
+  [1m[35m (29.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5164538164831103625)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200331182030)
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "password_digest" character varying, "age" integer, "gender" character varying, "profileimg" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (4.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331182030"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEntries (20200331183059)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "entries" ("id" bigserial primary key, "temp" float, "tempunit" character varying, "symptoms" character varying, "med" character varying, "dose" float, "doseunit" character varying, "time" time, "date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331183059"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableUserEntry (20200331183603)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "users_entries" ("id" bigserial primary key, "user_id" integer, "entry_id" integer)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331183603"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-31 18:40:57.013938"], ["updated_at", "2020-03-31 18:40:57.013938"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5164538164831103625)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "boostinwrx"], ["firstname", "Tiffany"], ["lastname", "Abraham"], ["password_digest", "$2a$12$JR0yTtAHfkm1lHdbgtqHkOTkGRxiFrclHwURW2S5ATWX3xpIz9F0S"], ["age", 24], ["gender", "F"], ["created_at", "2020-03-31 18:45:26.461445"], ["updated_at", "2020-03-31 18:45:26.461445"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-03-31 14:45:35 -0400
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/tonyabraham/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/tonyabraham/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 16.1ms | Allocations: 480)
+Completed 200 OK in 66ms (Views: 27.4ms | ActiveRecord: 0.0ms | Allocations: 2634)
+
+
+Started GET "/users" for ::1 at 2020-03-31 14:45:40 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 11.2ms | ActiveRecord: 9.4ms | Allocations: 9497)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5164538164831103625)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5164538164831103625)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (4.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "firstname", "lastname", "password_digest", "age", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 1], ["username", "boostinwrx"], ["firstname", "Tiffany"], ["lastname", "Abraham"], ["password_digest", "$2a$12$FKzN/KZ8gj8WCgshTvB17O/uUo7lu5pJXl9SLsCxj7u35ZO2Y1OcW"], ["age", 24], ["gender", "F"], ["created_at", "2020-03-31 18:50:39.312317"], ["updated_at", "2020-03-31 18:50:39.312317"]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "boostinwrx"], ["firstname", "Tiffany"], ["lastname", "Abraham"], ["password_digest", "$2a$12$OTQVIcRHNm1onUjavC4M9emfwxI.R0uAH50g4iY.7maWycz1PITNO"], ["age", 24], ["gender", "F"], ["created_at", "2020-03-31 18:51:16.195590"], ["updated_at", "2020-03-31 18:51:16.195590"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "boostinwrx"], ["firstname", "Tiffany"], ["lastname", "Abraham"], ["password_digest", "$2a$12$mVK6AUXeOFalllwxf14HG.q3ZMcp2Uesb.7zxWDDNSRucxZJysUba"], ["age", 24], ["gender", "F"], ["created_at", "2020-03-31 18:52:00.009704"], ["updated_at", "2020-03-31 18:52:00.009704"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEntry Create (2.4ms)[0m  [1m[32mINSERT INTO "entries" ("temp", "tempunit", "symptoms", "med", "dose", "doseunit", "time", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["temp", 103.5], ["tempunit", "F"], ["symptoms", "fever, cough, fatigue"], ["med", "Tylenol"], ["dose", 1000.0], ["doseunit", "mg"], ["time", "18:52:00.015311"], ["date", "2020-03-31"], ["created_at", "2020-03-31 18:52:00.025823"], ["updated_at", "2020-03-31 18:52:00.025823"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEntry Load (1.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (39.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "covid_buddy_be_development"[0m
+  [1m[35m (40.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "covid_buddy_be_test"[0m
+  [1m[35m (132.9ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_development" ENCODING = 'unicode'[0m
+  [1m[35m (65.2ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5164538164831103625)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200331182030)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "password_digest" character varying, "age" integer, "gender" character varying, "profileimg" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331182030"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEntries (20200331183059)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "entries" ("id" bigserial primary key, "temp" float, "tempunit" character varying, "symptoms" character varying, "med" character varying, "dose" float, "doseunit" character varying, "time" time, "date" date, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331183059"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableUserEntry (20200331183603)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "users_entries" ("id" bigserial primary key, "user_id" integer, "entry_id" integer)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331183603"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-31 18:56:00.042367"], ["updated_at", "2020-03-31 18:56:00.042367"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5164538164831103625)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5164538164831103625)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5164538164831103625)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "boostinwrx"], ["firstname", "Tiffany"], ["lastname", "Abraham"], ["password_digest", "$2a$12$Fpxl3GZEBn/4zKhaIrdr9.FYsYqQNequyo8yo0Jn0zif0O.zs.fXC"], ["age", 24], ["gender", "F"], ["created_at", "2020-03-31 18:56:35.872827"], ["updated_at", "2020-03-31 18:56:35.872827"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEntry Create (1.1ms)[0m  [1m[32mINSERT INTO "entries" ("temp", "tempunit", "symptoms", "med", "dose", "doseunit", "time", "date", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["temp", 103.5], ["tempunit", "F"], ["symptoms", "fever, cough, fatigue"], ["med", "Tylenol"], ["dose", 1000.0], ["doseunit", "mg"], ["time", "18:56:35.880128"], ["date", "2020-03-31"], ["user_id", 1], ["created_at", "2020-03-31 18:56:35.904290"], ["updated_at", "2020-03-31 18:56:35.904290"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/entries" for ::1 at 2020-03-31 14:57:15 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/entries_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 12.4ms | ActiveRecord: 7.1ms | Allocations: 10773)
+
+
+Started GET "/users" for ::1 at 2020-03-31 14:57:27 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 8.6ms | ActiveRecord: 3.9ms | Allocations: 8622)
+
+
