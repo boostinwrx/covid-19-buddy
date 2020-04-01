@@ -9,7 +9,7 @@ import {
     CLEAR_MESSAGE
 } from "../actions/actionTypes";
 import uuid from 'uuid';
-const API_URL =' https://localhost:3000/'
+const API_URL ='https://localhost:3000/'
 export default function manageUsers(state = {
     users: [],
     authenticated: false,
@@ -18,10 +18,11 @@ export default function manageUsers(state = {
     newUser: {
         username: '',
         password: '',
-        name: '',
-        picture: '',
-        bio: '',
-        pronouns: ''
+        firstname: '',
+        lastname: '',
+        gender: '',
+        age: '',
+        profileimg: ''
 
     }
 }, action){

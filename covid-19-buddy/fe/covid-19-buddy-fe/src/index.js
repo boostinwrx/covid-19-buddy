@@ -6,17 +6,32 @@ import * as serviceWorker from './serviceWorker';
 import {AUTHENTICATED} from "./actions/actionTypes";
 import configureStore from "./store";
 import {Provider} from 'react-redux'
+import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
+import createHistory from "history/createBrowserHistory";
+import requireAuth from "./components/hoc/RequireAuth";
+import noRequireAuth from "./components/hoc/NoRequireAuth";
+import Login from "./components/Login";
+import NavBar from "./components/NavBar";
+
 
 const store = configureStore()
-// const history = createHistory()
+const history = createHistory()
 const userToken = localStorage.getItem('token')
 
-    // store.dispatch({ type: AUTHENTICATED });
-    const API_URL =' https://localhost:3000/'
+if(userToken) {
+    store.dispatch({ type: AUTHENTICATED });
+}
+const API_URL ='localhost:3000/'
 
     ReactDOM.render(
   <Provider store={store}>
-    <App />
+      <BrowserRouter history={history} apiUrl={API_URL}>
+          <div>
+              <NavBar/>
+              <Route path='/login' component={noRequireAuth(Login)}/>
+             <Route path='/' component={noRequireAuth(App)}/>
+          </div>
+      </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

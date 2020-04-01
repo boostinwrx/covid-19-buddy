@@ -28,7 +28,7 @@ export function saveUser(user) {
  }
 export const axiosGetUsers = (users) => {
     return dispatch => {
-        axios.get(`${API_URL}users`,{headers:               {  Authorization: window.localStorage.getItem('token')}
+        axios.get(`${API_URL}/users`,{headers:               {  Authorization: window.localStorage.getItem('token')}
         })
             .then(response => {
                 dispatch(getUsers(response.data))
@@ -40,7 +40,7 @@ export const getProfileFetch = () => {
     return dispatch => {
         const token = localStorage.token;
         if (token) {
-            return fetch(`${API_URL}users`, {
+            return fetch(`${API_URL}/users`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export const userLoginFetch = user => {
     // const [isLoggedIn, setLoggedIn] = useState(false);
 
     return dispatch => {
-        return fetch(`${API_URL}login`, {
+        return fetch(`${API_URL}/login`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

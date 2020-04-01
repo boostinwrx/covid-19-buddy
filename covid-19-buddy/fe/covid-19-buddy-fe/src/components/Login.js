@@ -1,12 +1,9 @@
 import React from "react";
-import {Toolbar, GridList, BottomNavigation} from "@material-ui/core";
 import {connect} from "react-redux";
-import {Link} from "react-router-dom";
 import {Alert, Form, Popover} from "react-bootstrap";
 import {Button, MDBAlert} from "mdbreact";
 
 import axios from 'axios'
-import {login} from '../actions/login'
 import {clearMessage, userLoginFetch} from "../actions/user";
 // send JWT as a header in every request sent to the backend
 
