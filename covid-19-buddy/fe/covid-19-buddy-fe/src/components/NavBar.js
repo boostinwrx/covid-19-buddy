@@ -21,7 +21,8 @@ export default class NavBar extends Component {
         const login = () => {  return(              <NavLink to="/login"><Button id='logIn'className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Login</div></Button></NavLink>
         )}
 
-        const logOut = () => {  return(              <a><Button onClick={localStorage.removeItem('token') && this.props.history.push('/loginrequired')} className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Log Out</div></Button></a>
+        const logOut = () => {  return(              <a>                <NavLink to="/entries"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>My Entries</div></Button></NavLink>
+                <Button onClick={localStorage.removeItem('token') && this.props.history.push('/loginrequired')} className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Log Out</div></Button></a>
         )}
 
 
@@ -38,7 +39,6 @@ export default class NavBar extends Component {
                 { login()  }
                 <NavLink to="/meetups"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Meetups</div></Button></NavLink>
 
-                <NavLink to="/createmeetup"><Button className='btn-toolbar bg-transparent badge-pill'><div className='nav-link font-weight-bold black-text'>Create Meetup</div></Button></NavLink>
                 {/*<NavLink to='/myprofile'><Button className='btn btn-default'><div className='nav-link'>My Profile </div> </Button> </NavLink>*/}
                 {this.state.token ? logOut() : ''}
 

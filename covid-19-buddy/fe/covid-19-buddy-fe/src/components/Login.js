@@ -29,7 +29,7 @@ componentWillUnmount(){
         event.preventDefault();
         this.props.userLoginFetch(this.state)
 
-         setTimeout(() => {this.props.history.push('/') && this.props.clearMessage() }, 2000)
+         setTimeout(() => {this.props.history.push('/welcome') && this.props.clearMessage() }, 2000)
 
 
         // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }

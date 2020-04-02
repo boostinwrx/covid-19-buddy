@@ -12,7 +12,8 @@ import requireAuth from "./components/hoc/RequireAuth";
 import noRequireAuth from "./components/hoc/NoRequireAuth";
 import Login from "./components/Login";
 import NavBar from "./components/NavBar";
-
+import Welcome from './components/Welcome'
+import LoginRequired from './components/LoginRequired'
 
 const store = configureStore()
 const history = createHistory()
@@ -21,7 +22,7 @@ const userToken = localStorage.getItem('token')
 if(userToken) {
     store.dispatch({ type: AUTHENTICATED });
 }
-const API_URL ='localhost:3000/'
+const API_URL ='http://localhost:3000/'
 
     ReactDOM.render(
   <Provider store={store}>
@@ -30,6 +31,9 @@ const API_URL ='localhost:3000/'
               <NavBar/>
               <Route path='/login' component={noRequireAuth(Login)}/>
              <Route path='/' component={noRequireAuth(App)}/>
+              <Route path='/welcome' component={requireAuth(Welcome)}/>
+              <Route path='/loginrequired' component={noRequireAuth(LoginRequired)}/>
+
           </div>
       </BrowserRouter>
   </Provider>,

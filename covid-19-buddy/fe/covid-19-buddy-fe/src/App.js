@@ -7,8 +7,9 @@ import noRequireAuth from "./components/hoc/NoRequireAuth";
 import {connect} from "react-redux";
 // import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 import {axiosGetUsers} from "./actions/user";
-import {MDBCardHeader, MDBCardTitle} from "mdbreact";
-
+import {MDBCard, MDBCardHeader, MDBCardTitle} from "mdbreact";
+import {Card} from "react-bootstrap";
+import CardHeader from "react-bootstrap/Card";
 
 class App extends React.Component {
     componentDidMount() {
@@ -20,9 +21,9 @@ class App extends React.Component {
     render() {
         return (
 
-            <div className="App">
-                <MDBCardTitle><h1>Welcome to COVID-19 buddy!</h1></MDBCardTitle>
-            </div>
+            <MDBCard className="App">
+                <MDBCardTitle>Welcome to COVID-19 buddy!</MDBCardTitle>
+            </MDBCard>
 
 
         );
