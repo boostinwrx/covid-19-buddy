@@ -1,15 +1,19 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show, :update, :destroy]
+  #before_action :set_entry, only: [:show, :update, :destroy]
+  skip_before_action :require_login, only: [:index]
 
   # GET /entries
   def index
-    @entries = Entry.all
-
+    @entries = Entry.find_by(params[:user_id])
+    #byebug
     render json: @entries
+
+
   end
 
   # GET /entries/1
   def show
+    @entry = Entry.find(params[:id])
     render json: @entry
   end
 

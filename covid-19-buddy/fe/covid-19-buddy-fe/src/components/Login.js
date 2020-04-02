@@ -5,6 +5,7 @@ import {Button, MDBAlert} from "mdbreact";
 
 import axios from 'axios'
 import {clearMessage, userLoginFetch} from "../actions/user";
+import {axiosGetEntries, entryFetch} from "../actions/entry";
 // send JWT as a header in every request sent to the backend
 
 
@@ -17,6 +18,13 @@ class Login extends React.Component{
 
 componentWillUnmount(){
     this.props.clearMessage()
+
+}
+componentDidMount() {
+    // this.props.axiosGetEntries()
+    this.props.axiosGetEntries()
+
+
 }
 
     handleInputChange = (event) => {
@@ -87,7 +95,11 @@ const mapDispatchToProps = (dispatch) => {
         userLoginFetch: (userInfo) => {
             dispatch(userLoginFetch(userInfo))
         },
-        clearMessage: () => {dispatch(clearMessage())}
+        clearMessage: () => {dispatch(clearMessage())},
+        axiosGetEntries: (entries) => {
+            dispatch(axiosGetEntries(entries))
+        }
+
     };
 }
 

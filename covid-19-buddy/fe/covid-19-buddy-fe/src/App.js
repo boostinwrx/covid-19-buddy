@@ -10,6 +10,7 @@ import {axiosGetUsers} from "./actions/user";
 import {MDBCard, MDBCardHeader, MDBCardTitle} from "mdbreact";
 import {Card} from "react-bootstrap";
 import CardHeader from "react-bootstrap/Card";
+import {axiosGetEntries} from "./actions/entry";
 
 class App extends React.Component {
     componentDidMount() {
@@ -34,6 +35,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         axiosGetUsers: (users) => {
             dispatch(axiosGetUsers(users))
+        },
+        axiosGetEntries: (entries) => {
+            dispatch(axiosGetEntries(entries))
         }
     }
 }
