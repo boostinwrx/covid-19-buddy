@@ -1,68 +1,60 @@
+Note: App is in *early* stages of development.
+
+# Covid-19 Buddy
+#### *Covid-19 Buddy* is an application created to help Covid-19 patients/victims at home, to take proper care of themselves.
+ 
+ Developed by somebody who, at the time of writing this, is sick with Covid-19; I noticed a lack of online tools to support covid-19 victims.
+ I encourage anyone who wants to build upon what I've done so far, to meet the goals stated below, making a critical tool for at-home covid-19 patients.
+ 
+ ## App Goals
+ * Assist users keep track of their temperature over time, utilizing various graphs
+ * Provide users with tools/resources to reach out for mental health or medical support
+ * Allow users to track their medication/dosage over time
+ * Give users ability to track their symptoms over time, as well as their mental health
+ * Provide users with their closest testing site, local health department resources, etc.
+ * Automatically warn/prompt users if certain red flags arise from their entries (trouble breathing, high grade fever, suicidal thoughts, etc.); provide crisis hotlines
+ -----
+ ### Technologies Used
+ 
+ #### Client-Side (Front-End):
+  #### React 
+* With Redux for global state management
+* Redux-Thunk middleware
+ 
+ ##### Package.json Dependencies:
+* @testing-library/jest-dom":^4.2.4"
+* @testing-library/react":^9.3.2"
+* @testing-library/user-event":^7.1.2"
+* mdbreact":^4.25.5"
+* react":^16.13.1"
+* react-bootstrap":^1.0.0"
+* react-dom":^16.13.1"
+* react-scripts":3.4.1"
+* redux":^4.0.5"
+* redux-devtools-extension":^2.13.8"
+* redux-thunk":^2.3.0"
+* prop-types":latest"
+ 
+ 
+ #### Server-Side (Backend):
+  #### Ruby on Rails (v. *6.0.2.2*)
+  
+  #### Database:
+  * PostgreSQL
+  
+  ##### Important Gems: 
+  * JWT for user authentication tokens
+  * Bcrypt for encrypted user credentials
+  * Rack-cors for Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+ 
+ 
+ ### Would you like to contribute/build upon what I've made so far?
+ Please, feel free to build upon and improve what I've done so far, to meet the ultimate goals stated above. 
+ 
+ ##### Email me at: **tifftiff.email@gmail.com** with the subject line including *Covid-19 Buddy*
+ 
+ ##### **I encourage you to contribute as this could be a valuable tool for covid-19 patients who are self-isolated at home, caring for themselves.**
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
