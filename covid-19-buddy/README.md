@@ -1,4 +1,4 @@
-**Note: App is in *early* stages of development.
+** Note: App is in *early* stages of development.
 
 # Covid-19 Buddy
 #### *Covid-19 Buddy* is an application created to help Covid-19 patients/victims at home, to take proper care of themselves.
@@ -16,7 +16,7 @@
  -----
  ### Technologies Used
  
- #### Client-Side (Front-End):
+ ### Client-Side (Front-End):
   #### React 
 * With Redux for global state management
 * Redux-Thunk middleware
@@ -36,7 +36,7 @@
 * prop-types":latest"
  
  
- #### Server-Side (Backend):
+ ### Server-Side (Backend):
   #### Ruby on Rails (v. *6.0.2.2*)
   
   #### Database:
@@ -47,6 +47,7 @@
   * Bcrypt for encrypted user credentials
   * Rack-cors for Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
  
+ ----
  
  ### Would you like to contribute/build upon what I've made so far?
  Please, feel free to build upon and improve what I've done so far, to meet the ultimate goals stated above. 
