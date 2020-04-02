@@ -20,6 +20,7 @@
   #### React 
 * With Redux for global state management
 * Redux-Thunk middleware
+* Interface styling with [MDBreact](https://www.npmjs.com/package/mdbreact)
  
  ##### Package.json Dependencies:
 * @testing-library/jest-dom":^4.2.4"
