@@ -2425,3 +2425,140 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 981)
 
 
+Started GET "/users/" for ::1 at 2020-04-02 04:29:03 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 982)
+
+
+Started GET "/entries" for ::1 at 2020-04-02 04:29:06 -0400
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 947)
+
+
+Started GET "/entries" for ::1 at 2020-04-02 04:29:10 -0400
+Processing by EntriesController#index as HTML
+Started GET "/users" for ::1 at 2020-04-02 04:29:10 -0400
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 987)
+
+
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 1.1ms | Allocations: 982)
+
+
+Started GET "/entries" for ::1 at 2020-04-02 04:29:15 -0400
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 950)
+
+
+Started POST "/login" for ::1 at 2020-04-02 04:29:26 -0400
+Processing by AuthController#login as JSON
+  Parameters: {"user"=>{"username"=>"boostinWRX", "password"=>"[FILTERED]", "success"=>""}, "auth"=>{"user"=>{"username"=>"boostinWRX", "password"=>"[FILTERED]", "success"=>""}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "boostinWRX"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5:in `login'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 812)
+
+
+Started GET "/entries" for ::1 at 2020-04-02 04:29:29 -0400
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 947)
+
+
+Started POST "/login" for ::1 at 2020-04-02 04:29:36 -0400
+Processing by AuthController#login as JSON
+  Parameters: {"user"=>{"username"=>"boostinwrx", "password"=>"[FILTERED]", "success"=>""}, "auth"=>{"user"=>{"username"=>"boostinwrx", "password"=>"[FILTERED]", "success"=>""}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "boostinwrx"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5:in `login'
+Completed 200 OK in 203ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/users" for ::1 at 2020-04-02 04:30:52 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 982)
+
+
+Started GET "/users" for ::1 at 2020-04-02 04:31:49 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 1.2ms | Allocations: 985)
+
+
+Started GET "/users" for ::1 at 2020-04-02 04:32:17 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 985)
+
+
+Started GET "/users" for ::1 at 2020-04-02 04:32:48 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (19.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 5.0ms | ActiveRecord: 19.6ms | Allocations: 982)
+
+
+Started GET "/users" for ::1 at 2020-04-02 04:32:52 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 982)
+
+
+Started GET "/entries" for ::1 at 2020-04-02 04:32:53 -0400
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 947)
+
+
+Started POST "/login" for ::1 at 2020-04-02 04:32:57 -0400
+Processing by AuthController#login as JSON
+  Parameters: {"user"=>{"username"=>"boostinwrx", "password"=>"[FILTERED]", "success"=>""}, "auth"=>{"user"=>{"username"=>"boostinwrx", "password"=>"[FILTERED]", "success"=>""}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "boostinwrx"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5:in `login'
+Completed 200 OK in 202ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 969)
+
+
+Started GET "/users" for ::1 at 2020-04-02 04:34:09 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 982)
+
+
+Started GET "/users" for ::1 at 2020-04-02 04:34:12 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 982)
+
+
+Started GET "/entries" for ::1 at 2020-04-02 04:34:16 -0400
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 947)
+
+
+Started POST "/login" for ::1 at 2020-04-02 04:34:40 -0400
+Processing by AuthController#login as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "success"=>""}, "auth"=>{"user"=>{"username"=>"", "password"=>"[FILTERED]", "success"=>""}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5:in `login'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 662)
+
+

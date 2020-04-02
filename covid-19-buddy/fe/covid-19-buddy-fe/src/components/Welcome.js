@@ -2,14 +2,13 @@ import React from "react";
 import {connect} from "react-redux";
 import {CardTitle, MDBAlert, MDBCardBody, MDBCardHeader, MDBCardTitle} from "mdbreact";
 import {Card} from "mdbreact";
+import {clearMessage, userLoginFetch} from "../actions/user";
+import {axiosGetEntries} from "../actions/entry";
 export default class Welcome extends React.Component{
-    // state = { users: []
-    //     // username: '',
-    //     //    password: ''
-    // }
-// componentDidMount() {
-//
-// }
+
+componentDidMount() {
+    // this.props.axiosGetEntries()
+}
 
     render() {
         return(
@@ -27,7 +26,14 @@ export default class Welcome extends React.Component{
 }
 //
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        axiosGetEntries: (entries) => {
+            dispatch(axiosGetEntries(entries))
+        }
+
+    };
+}
 
 
-
-connect()(Welcome)
+connect(mapDispatchToProps)(Welcome)
