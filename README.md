@@ -1,4 +1,5 @@
-** Note: App is in *early* stages of development.
+**Note: App is in *early* stages of development.**
+### This is being made for the [CODEvid-19 hackathon](https://codevid19.com/).
 
 # Covid-19 Buddy
 #### *Covid-19 Buddy* is an application created to help Covid-19 patients/victims at home, to take proper care of themselves.
@@ -55,6 +56,6 @@
  
  ##### **I encourage you to contribute as this could be a valuable tool for covid-19 patients who are self-isolated at home, caring for themselves.**
 
-
+**Project Created By: [Tiffany Abraham](https://www.linkedin.com/in/tiffany-abraham/)**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).**
