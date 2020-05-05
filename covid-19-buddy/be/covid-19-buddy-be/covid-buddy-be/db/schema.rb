@@ -16,15 +16,18 @@ ActiveRecord::Schema.define(version: 2020_03_31_183059) do
   enable_extension "plpgsql"
 
   create_table "entries", force: :cascade do |t|
-    t.float "temp"
-    t.string "tempunit"
-    t.string "symptoms"
-    t.string "med"
-    t.float "dose"
-    t.string "doseunit"
-    t.time "time"
-    t.date "date"
-    t.integer "user_id"
+    t.boolean "suicidal_urges_boolean"
+    t.boolean "sib_urges_boolean"
+    t.integer "sadness_level"
+    t.integer "happiness_level"
+    t.integer "anxiety_level"
+    t.integer "anger_level"
+    t.integer "dysphoria_level"
+    t.integer "ed_level"
+    t.boolean "used_skills_boolean"
+    t.string "mood"
+    t.string "details"
+    t.string "skills"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_183059) do
     t.string "lastname"
     t.string "password_digest"
     t.integer "age"
+    t.string "bio"
+    t.string "pronouns"
     t.string "gender"
     t.string "profileimg"
     t.datetime "created_at", precision: 6, null: false

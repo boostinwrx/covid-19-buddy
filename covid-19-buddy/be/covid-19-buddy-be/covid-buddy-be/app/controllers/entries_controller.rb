@@ -50,6 +50,21 @@ class EntriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def entry_params
-      params.require(:entry).permit(:temp, :tempunit, :symptoms, :med, :dose, :doseunit, :time, :date, :user_id)
+      params.require(:entry).permit(:suicidal_urges_boolean,:sib_urges_boolean, :sadness_level, :skills,  :happiness_level, :anxiety_level, :ed_level,   :details,  :mood, :used_skills_boolean, :dysphoria_level, :anger_level, :time, :date, :user_id)
     end
 end
+
+#t.boolean :suicidal_urges_boolean,
+#t.boolean :sib_urges_boolean
+#
+#t.integer :sadness_level
+#t.integer :happiness_level
+#t.integer :anxiety_level
+#t.integer :anger_level
+#t.integer :dysphoria_level
+#t.integer :ed_level
+#
+#t.boolean :used_skills_boolean
+#t.string :mood
+#t.string :details
+#t.string :skills

@@ -3980,3 +3980,73 @@ Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 2.5ms | Allocations: 105
 
   [1m[35m (0.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "covid_buddy_be_development"[0m
   [1m[35m (0.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "covid_buddy_be_test"[0m
+  [1m[35m (190.5ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_development" ENCODING = 'unicode'[0m
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5164538164831103625)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200331182030)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "password_digest" character varying, "age" integer, "bio" character varying, "pronouns" character varying, "gender" character varying, "profileimg" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331182030"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEntries (20200331183059)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "entries" ("id" bigserial primary key, "suicidal_urges_boolean" boolean, "sib_urges_boolean" boolean, "sadness_level" integer, "happiness_level" integer, "anxiety_level" integer, "anger_level" integer, "dysphoria_level" integer, "ed_level" integer, "used_skills_boolean" boolean, "mood" character varying, "details" character varying, "skills" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331183059"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-05 22:28:41.082358"], ["updated_at", "2020-05-05 22:28:41.082358"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5164538164831103625)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (11.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "bio", "pronouns", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "boostinwrx"], ["firstname", "Tiffany"], ["lastname", "Abraham"], ["password_digest", "$2a$12$jMKMNytIv15X90dV1.uTKeYnaP5SIkvXlHFnn8pooCMBOch4rg2Aa"], ["age", 24], ["bio", "Im a transgender woman who suffers from many mental health\nhealth issues. Im also the creator of this app. I made this app so people can track there mood, use DBT skills, and get the help they need\nif theyre in crisis."], ["pronouns", "she/her"], ["gender", "F"], ["created_at", "2020-05-05 22:46:40.268300"], ["updated_at", "2020-05-05 22:46:40.268300"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (53.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "covid_buddy_be_development"[0m
+  [1m[35m (43.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "covid_buddy_be_test"[0m
+  [1m[35m (375.4ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_development" ENCODING = 'unicode'[0m
+  [1m[35m (226.2ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5164538164831103625)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200331182030)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "password_digest" character varying, "age" integer, "bio" character varying, "pronouns" character varying, "gender" character varying, "profileimg" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331182030"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEntries (20200331183059)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "entries" ("id" bigserial primary key, "suicidal_urges_boolean" boolean, "sib_urges_boolean" boolean, "sadness_level" integer, "happiness_level" integer, "anxiety_level" integer, "anger_level" integer, "dysphoria_level" integer, "ed_level" integer, "used_skills_boolean" boolean, "mood" character varying, "details" character varying, "skills" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331183059"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-05 22:48:05.175299"], ["updated_at", "2020-05-05 22:48:05.175299"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5164538164831103625)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "bio", "pronouns", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "boostinwrx"], ["firstname", "Tiffany"], ["lastname", "Abraham"], ["password_digest", "$2a$12$prbAVeToI7tYnbS1oYEcQeYXj6.FIx1vvbzYNUzlxbZV5NJKZeN4i"], ["age", 24], ["bio", "Im a transgender woman who suffers from many mental health\nhealth issues. Im also the creator of this app. I made this app so people can track there mood, use DBT skills, and get the help they need\nif theyre in crisis."], ["pronouns", "she/her"], ["gender", "F"], ["created_at", "2020-05-05 22:48:11.291617"], ["updated_at", "2020-05-05 22:48:11.291617"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "bio", "pronouns", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "boostinwrx"], ["firstname", "Tiffany"], ["lastname", "Abraham"], ["password_digest", "$2a$12$c3J46bqtwUVeBzkYVgWdvOXEdfCxcTF1GbL3kPVR3MgEJ2eG/gTwK"], ["age", 24], ["bio", "Im a transgender woman who suffers from many mental health\nhealth issues. Im also the creator of this app. I made this app so people can track there mood, use DBT skills, and get the help they need\nif theyre in crisis."], ["pronouns", "she/her"], ["gender", "F"], ["created_at", "2020-05-05 22:48:53.914420"], ["updated_at", "2020-05-05 22:48:53.914420"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m

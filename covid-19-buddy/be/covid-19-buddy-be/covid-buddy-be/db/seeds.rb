@@ -10,17 +10,30 @@
 #t.string "lastname"
 #t.string "password_digest"
 #t.integer "age"
+#t.string "bio"
+#t.string "pronouns"
 #t.string "gender"
 #t.string "profileimg"
-#
-#t.float :temp
-##t.string :tempunit
-##t.string :symptoms
-##t.string :med
-##t.float :dose
-##t.string :doseunit
-##t.time :time
-##t.date :date
-u1 = User.create_or_find_by(username: 'boostinwrx', firstname: 'Tiffany', lastname: 'Abraham', password: '0123', age: 24, gender: 'F' )
 
-Entry.create_or_find_by(user_id: u1.id, temp: 103.5, tempunit: 'F', symptoms: 'fever, cough, fatigue', med: 'Tylenol', dose: 1000, time: Time.current, date: Date.current, doseunit: 'mg' )
+#t.boolean :suicidal_urges_boolean,
+#t.boolean :sib_urges_boolean
+#
+#t.integer :sadness_level
+#t.integer :happiness_level
+#t.integer :anxiety_level
+#t.integer :anger_level
+#t.integer :dysphoria_level
+#t.integer :ed_level
+#
+#t.boolean :used_skills_boolean
+#t.string :mood
+#t.string :details
+#t.string :skills
+
+u1 = User.create_or_find_by(username: 'boostinwrx', firstname: 'Tiffany', lastname: 'Abraham', password: '0123', bio: 'Im a transgender woman who suffers from many mental health
+health issues. Im also the creator of this app. I made this app so people can track there mood, use DBT skills, and get the help they need
+if theyre in crisis.', pronouns: 'she/her',age: 24, gender: 'F' )
+
+Entry.create_or_find_by( suicidal_urges_boolean: false,  sib_urges_boolean: false, sadness_level: 2, happiness_level: 7,anxiety_level: 4, anger_level: 1,
+                            dysphoria_level: 6,  ed_level: 9, used_skills_boolean: true, mood: 'Happy', details: 'Im coding this application, about to cook dinner.
+    Feeling happy, but strong eating disorder urges' , skills: 'Check the FACTS, Opposite action ',)
