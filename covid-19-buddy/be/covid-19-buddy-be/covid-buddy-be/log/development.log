@@ -4310,3 +4310,88 @@ Processing by EntriesController#index as HTML
 Completed 200 OK in 48ms (Views: 14.1ms | ActiveRecord: 29.5ms | Allocations: 11868)
 
 
+Started GET "/users" for ::1 at 2020-05-06 00:14:03 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 1.1ms | Allocations: 1018)
+
+
+Started GET "/users" for ::1 at 2020-05-06 00:14:03 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1018)
+
+
+Started GET "/entries" for ::1 at 2020-05-06 00:14:08 -0400
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/entries_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1030)
+
+
+Started GET "/entries" for ::1 at 2020-05-06 00:14:09 -0400
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/entries_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1049)
+
+
+Started POST "/login" for ::1 at 2020-05-06 00:14:16 -0400
+Processing by AuthController#login as JSON
+  Parameters: {"user"=>{"username"=>"boostinwrx", "password"=>"[FILTERED]", "success"=>""}, "auth"=>{"user"=>{"username"=>"boostinwrx", "password"=>"[FILTERED]", "success"=>""}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "boostinwrx"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5:in `login'
+Completed 200 OK in 233ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1514)
+
+
+Started GET "/entries" for ::1 at 2020-05-06 00:14:19 -0400
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/entries_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1049)
+
+
+Started GET "/entries" for ::1 at 2020-05-06 00:26:59 -0400
+Started GET "/users" for ::1 at 2020-05-06 00:26:59 -0400
+Processing by EntriesController#index as HTML
+Processing by UsersController#index as HTML
+  [1m[36mEntry Load (1.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/entries_controller.rb:8:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 1.2ms | Allocations: 1649)
+
+
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 2328)
+
+
+Started GET "/users" for ::1 at 2020-05-06 00:26:59 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1018)
+
+
+Started GET "/entries" for ::1 at 2020-05-06 00:27:05 -0400
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (1.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/entries_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 1.1ms | Allocations: 1045)
+
+
+Started GET "/entries" for ::1 at 2020-05-06 00:27:12 -0400
+Started GET "/users" for ::1 at 2020-05-06 00:27:12 -0400
+Processing by EntriesController#index as HTML
+Processing by UsersController#index as HTML
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/entries_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 1152)
+
+
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 2.0ms | Allocations: 2170)
+
+

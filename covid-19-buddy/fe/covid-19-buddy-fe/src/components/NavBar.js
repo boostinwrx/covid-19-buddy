@@ -29,7 +29,7 @@ export default class NavBar extends Component {
             <MDBNavbar id='navbar' className='navbar bg-primary'>
 
                 <NavbarBrand>
-                    COVID-19 Buddy
+                    iCanCope
 
                 </NavbarBrand>
 

@@ -1,18 +1,22 @@
-** Note: App is in *early* stages of development.
+** Note: App is in *early* stages of development. *Contributors welcome!*
 
-# Covid-19 Buddy
-#### *Covid-19 Buddy* is an application created to help Covid-19 patients/victims at home, to take proper care of themselves.
+
+# iCanCope
+#### iCanCope is a mental health focused app made for anyone who wants to track their moods, urges, and various other metrics.*
+ I created this after being in therapy for many years, and learning DBT in depth. I now use DBt skills every day, and it's important that I track my moods and urges.
+ One aspect of DBT therapy is keeping a diary card to track your mental health, what coping skills you used, and what contributed to that mood.
  
- Developed by somebody who, at the time of writing this, is sick with Covid-19; I noticed a lack of online tools to support covid-19 victims.
- I encourage anyone who wants to build upon what I've done so far, to meet the goals stated below, making a critical tool for at-home covid-19 patients.
+ This is meant to be a fancy verison of a diary card of sorts, that can even suggest coping skills based on your entry (not meant to replace a doctors advice).*
+ Keeping a diary card, in conbination with therapy, has vastly improved my life. I hope I can help do the same for others, by providing a smarter diary card.
+ The final product will have all that, and will importantly direct anyone in a crisis situation to appropiate resources and hotlines. 
  
- ## App Goals
- * Assist users keep track of their temperature over time, utilizing various graphs
- * Provide users with tools/resources to reach out for mental health or medical support
- * Allow users to track their medication/dosage over time
- * Give users ability to track their symptoms over time, as well as their mental health
- * Provide users with their closest testing site, local health department resources, etc.
- * Automatically warn/prompt users if certain red flags arise from their entries (trouble breathing, high grade fever, suicidal thoughts, etc.); provide crisis hotlines
+ This app also features specific tools and metrics for gender dysphoria and eating disorder behaviors.
+ #### Disclaimer: * _This app is not a replacement for therapy, nor is it meant to replace proper treatment, it is meant as a tool to add to your mental health toolbox, I am not a medical professional, any advice given by this app is not *directly* from a medical professional **unless specifically stated**.)_
+ ---
+ 
+ ### FAQ: 
+ **Q:** Why is this repo called covid19-buddy, isn't this a mental health app? 
+ **A:** *This is a **rework** of another unfinished app I was working on, covid19-buddy, that I decided to rework to be a mental health app, some things (such as repo name and folder names) will be covid19-buddy related until it's ready for production.*
  -----
  ### Technologies Used
  
@@ -53,9 +57,8 @@
  ### Would you like to contribute/build upon what I've made so far?
  Please, feel free to build upon and improve what I've done so far, to meet the ultimate goals stated above. 
  
- ##### Email me at: **tifftiff.email@gmail.com** with the subject line including *Covid-19 Buddy*
+ ##### Email me at: **tifftiff.email@gmail.com** with the subject line including *iCanCope*
  
- ##### **I encourage you to contribute as this could be a valuable tool for covid-19 patients who are self-isolated at home, caring for themselves.**
 
 
 
