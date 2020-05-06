@@ -1,4 +1,4 @@
-### Note: App is in *early* stages of development. *Contributors welcome!*
+**### Note: App is in *early* stages of development. *Contributors welcome!*
 *(See FAQ for details such as name)*
 
 # iCanCope
