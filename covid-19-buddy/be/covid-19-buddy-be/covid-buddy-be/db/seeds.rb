@@ -29,11 +29,13 @@
 #t.string :mood
 #t.string :details
 #t.string :skills
+User.destroy_all
+Entry.destroy_all
 
 u1 = User.create_or_find_by(username: 'boostinwrx', firstname: 'Tiffany', lastname: 'Abraham', password: '0123', bio: 'Im a transgender woman who suffers from many mental health
 health issues. Im also the creator of this app. I made this app so people can track there mood, use DBT skills, and get the help they need
 if theyre in crisis.', pronouns: 'she/her',age: 24, gender: 'F' )
 
-Entry.create_or_find_by( suicidal_urges_boolean: false,  sib_urges_boolean: false, sadness_level: 2, happiness_level: 7,anxiety_level: 4, anger_level: 1,
+Entry.create_or_find_by(user_id: u1.id ,suicidal_urges_boolean: false,  sib_urges_boolean: false, sadness_level: 2, happiness_level: 7,anxiety_level: 4, anger_level: 1,
                             dysphoria_level: 6,  ed_level: 9, used_skills_boolean: true, mood: 'Happy', details: 'Im coding this application, about to cook dinner.
     Feeling happy, but strong eating disorder urges' , skills: 'Check the FACTS, Opposite action ',)

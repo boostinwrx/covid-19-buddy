@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_183059) do
     t.string "mood"
     t.string "details"
     t.string "skills"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

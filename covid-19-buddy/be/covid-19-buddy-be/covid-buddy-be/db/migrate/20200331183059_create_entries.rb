@@ -16,6 +16,8 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.string :details
       t.string :skills
 
+      t.integer :user_id
+
 
 
       t.timestamps

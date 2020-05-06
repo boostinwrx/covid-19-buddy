@@ -4,11 +4,8 @@ class EntriesController < ApplicationController
 
   # GET /entries
   def index
-    @entries = Entry.find_by(params[:user_id])
-    #byebug
+    @entries = Entry.all
     render json: @entries
-
-
   end
 
   # GET /entries/1
