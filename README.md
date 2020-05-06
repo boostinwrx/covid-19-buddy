@@ -12,7 +12,7 @@
  The final product will have all that, and will importantly direct anyone in a crisis situation to appropiate resources and hotlines. 
  
  This app also features specific tools and metrics for gender dysphoria and eating disorder behaviors.
- #### (*) Disclaimer: _This app is not a replacement for therapy, nor is it meant to replace proper treatment, it is meant as a tool to add to your mental health toolbox, I am not a medical professional, any advice given by this app is not *directly* from a medical professional **unless specifically stated**.)_\
+ #### (*) Disclaimer: _This app is not a replacement for therapy, nor is it meant to replace proper treatment, it is meant as a tool to add to your mental health toolbox, I am not a medical professional, any advice given by this app is not *directly* from a medical professional **unless specifically stated**.)_
  
  ---
  
