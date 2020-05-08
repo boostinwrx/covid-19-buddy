@@ -19,6 +19,7 @@ import Welcome from './components/Welcome'
 import LoginRequired from './components/LoginRequired'
 import EntriesContainer from "./containers/EntriesContainer";
 import CreateAccount from "./components/CreateAccount";
+import CreateEntry from "./components/CreateEntry";
 
 const store = configureStore()
 const history = createHistory()
@@ -34,6 +35,7 @@ const API_URL ='http://localhost:3000/'
       <BrowserRouter history={history} apiUrl={API_URL}>
           <div>
               <NavBar/>
+              <Route path='/newentry' component={requireAuth(CreateEntry)}/>
               <Route path='/createaccount' component={noRequireAuth(CreateAccount)}/>
               <Route path='/login' component={noRequireAuth(Login)}/>
              <Route path='/' component={noRequireAuth(App)}/>

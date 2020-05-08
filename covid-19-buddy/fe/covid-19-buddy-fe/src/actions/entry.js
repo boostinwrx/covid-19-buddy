@@ -1,6 +1,6 @@
 import {API_URL, GET_ENTRIES, SAVE_ENTRY} from "./actionTypes";
 import axios from "axios";
-import {authError, getUsers, loginSuccess, loginUser} from "./user";
+import {authError, getUsers, loginSuccess, loginUser, saveUser} from "./user";
 
 export function saveEntry(newEntry) {
     return {type: SAVE_ENTRY, entry: newEntry}
@@ -19,5 +19,15 @@ export function axiosGetEntries(entries){
                 dispatch(getEntries(response.data))
             })
             .catch(e => console.log(e))
+    }
+}
+
+export const axiosPostEntry = (newEntry) => {
+    return dispatch => {
+        axios.post(`${API_URL}/entries`, {newEntry: newEntry})
+            .then(response => {
+                dispatch(saveEntry(response.data))
+            })
+            .catch(e => console.warn(e))
     }
 }
