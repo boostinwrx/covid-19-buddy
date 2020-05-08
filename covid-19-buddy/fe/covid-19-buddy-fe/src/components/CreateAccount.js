@@ -120,5 +120,10 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
+// const mapStateToProps = (state) => {
+//     return {
+//         newUser: state.users.newUser
+//     }
+// }
 
 export default connect(null,mapDispatchToProps)(CreateAccount)

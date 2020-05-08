@@ -5826,3 +5826,128 @@ Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 1
 ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
   
 app/controllers/users_controller.rb:10:in `create'
+Started GET "/users" for ::1 at 2020-05-08 06:50:20 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 30ms (Views: 13.8ms | ActiveRecord: 9.4ms | Allocations: 9288)
+
+
+Started POST "/users" for ::1 at 2020-05-08 06:51:10 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"anna", "firstname"=>"anna", "lastname"=>"lee", "password"=>"[FILTERED]", "gender"=>"", "age"=>"23", "profileimg"=>"", "bio"=>"", "pronouns"=>"she/her"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 418)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'pronouns' for User.):
+  
+app/controllers/users_controller.rb:10:in `create'
+Started GET "/users" for ::1 at 2020-05-08 06:51:54 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1000)
+
+
+Started POST "/users" for ::1 at 2020-05-08 06:52:32 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"anna", "firstname"=>"anna", "lastname"=>"lee", "password"=>"[FILTERED]", "gender"=>"", "age"=>"30", "profileimg"=>"", "bio"=>"", "pronouns"=>"she"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 342)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'pronouns' for User.):
+  
+app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (47.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "covid_buddy_be_development"[0m
+  [1m[35m (37.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "covid_buddy_be_test"[0m
+  [1m[35m (130.8ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_development" ENCODING = 'unicode'[0m
+  [1m[35m (76.2ms)[0m  [1m[35mCREATE DATABASE "covid_buddy_be_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5164538164831103625)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200331182030)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "password_digest" character varying, "age" integer, "bio" character varying, "pronouns" character varying, "gender" character varying, "profileimg" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331182030"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEntries (20200331183059)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "entries" ("id" bigserial primary key, "suicidal_urges_boolean" boolean, "sib_urges_boolean" boolean, "sadness_level" integer, "happiness_level" integer, "anxiety_level" integer, "anger_level" integer, "dysphoria_level" integer, "ed_level" integer, "used_skills_boolean" boolean, "mood" character varying, "details" character varying, "skills" character varying, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200331183059"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-08 10:53:58.814642"], ["updated_at", "2020-05-08 10:53:58.814642"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5164538164831103625)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "bio", "pronouns", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "boostinwrx"], ["firstname", "Tiffany"], ["lastname", "Abraham"], ["password_digest", "$2a$12$jLfdO1Bwzs9EDNlQOlha1u6EkNscgC0wpNta.I/KPTC.gALizpFRe"], ["age", 24], ["bio", "Im a transgender woman who suffers from many mental health\nhealth issues. Im also the creator of this app. I made this app so people can track there mood, use DBT skills, and get the help they need\nif theyre in crisis."], ["pronouns", "she/her"], ["gender", "F"], ["created_at", "2020-05-08 10:54:06.386508"], ["updated_at", "2020-05-08 10:54:06.386508"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEntry Create (0.7ms)[0m  [1m[32mINSERT INTO "entries" ("suicidal_urges_boolean", "sib_urges_boolean", "sadness_level", "happiness_level", "anxiety_level", "anger_level", "dysphoria_level", "ed_level", "used_skills_boolean", "mood", "details", "skills", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["suicidal_urges_boolean", false], ["sib_urges_boolean", false], ["sadness_level", 2], ["happiness_level", 7], ["anxiety_level", 4], ["anger_level", 1], ["dysphoria_level", 6], ["ed_level", 9], ["used_skills_boolean", true], ["mood", "Happy"], ["details", "Im coding this application, about to cook dinner.\n    Feeling happy, but strong eating disorder urges"], ["skills", "Check the FACTS, Opposite action "], ["user_id", 1], ["created_at", "2020-05-08 10:54:06.426509"], ["updated_at", "2020-05-08 10:54:06.426509"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users" for ::1 at 2020-05-08 06:54:18 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"anna", "firstname"=>"anna", "lastname"=>"lee", "password"=>"[FILTERED]", "gender"=>"", "age"=>"30", "profileimg"=>"", "bio"=>"", "pronouns"=>"she"}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "bio", "pronouns", "gender", "profileimg", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["username", "anna"], ["firstname", "anna"], ["lastname", "lee"], ["password_digest", "$2a$12$9GFgB9ebjcjcNfFADPvOhePBHT5Y5WMzdp3PHELBnPo.cuQVB7jRS"], ["age", 30], ["bio", ""], ["pronouns", "she"], ["gender", ""], ["profileimg", ""], ["created_at", "2020-05-08 10:54:19.274593"], ["updated_at", "2020-05-08 10:54:19.274593"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 364ms (Views: 2.4ms | ActiveRecord: 18.6ms | Allocations: 11289)
+
+
+Started GET "/users" for ::1 at 2020-05-08 06:54:35 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.6ms | Allocations: 1305)
+
+
+Started POST "/users" for ::1 at 2020-05-08 06:55:00 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"anna", "firstname"=>"", "lastname"=>"lee", "password"=>"[FILTERED]", "gender"=>"", "age"=>"30", "profileimg"=>"", "bio"=>"", "pronouns"=>"she"}}
+Completed 500 Internal Server Error in 512ms (ActiveRecord: 0.0ms | Allocations: 72908)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x00007f8cc88185d8>
+Did you mean?  @user):
+  
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for ::1 at 2020-05-08 06:55:29 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"annaii", "firstname"=>"Lynn", "lastname"=>"lee", "password"=>"[FILTERED]", "gender"=>"Lynn Abraham", "age"=>"30", "profileimg"=>"", "bio"=>"", "pronouns"=>"she"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "password_digest", "age", "bio", "pronouns", "gender", "profileimg", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["username", "annaii"], ["firstname", "Lynn"], ["lastname", "lee"], ["password_digest", "$2a$12$Fhusq.0Muv35lh8v94c8Ue8P.98M30roQeyZDtD1PqX76YZRwIv86"], ["age", 30], ["bio", ""], ["pronouns", "she"], ["gender", "Lynn Abraham"], ["profileimg", ""], ["created_at", "2020-05-08 10:55:29.714533"], ["updated_at", "2020-05-08 10:55:29.714533"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 262ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2926)
+
+
+Started GET "/users" for ::1 at 2020-05-08 06:55:45 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1452)
+
+
