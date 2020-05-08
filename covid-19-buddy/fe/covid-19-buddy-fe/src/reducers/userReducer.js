@@ -21,7 +21,8 @@ export default function manageUsers(state = {
         firstname: '',
         lastname: '',
         gender: '',
-        age: '',
+        pronouns: '',
+        age: null,
         profileimg: ''
 
     }

@@ -37,7 +37,7 @@ componentDidMount() {
         event.preventDefault();
         this.props.userLoginFetch(this.state)
 
-         setTimeout(() => {this.props.history.push('/welcome') && this.props.clearMessage() }, 2000)
+         setTimeout(() => {this.props.history.push('/welcome') && this.props.clearMessage() }, 4000)
 
 
         // this.props.dispatch({type: 'LOGIN', currentUser: {username: this.state.username, password: this.state.username}})    }
@@ -61,6 +61,7 @@ componentDidMount() {
 
                 <h2 id='login-header' className='header-raised'> Login</h2>
                 <Form id='login form' onSubmit={this.handleOnSubmit}>
+
 
                     <Form.Group id='login form-group username'onChange={this.handleInputChange} >
                         <Form.Label id='login form-label username'>Username</Form.Label>
