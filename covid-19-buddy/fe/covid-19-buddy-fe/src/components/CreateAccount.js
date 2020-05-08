@@ -84,9 +84,9 @@ class CreateAccount extends React.Component{
                 </Form.Group>
 
 
-                    <Form.Group id='create-account form-group pronouns' onChange={this.handleInputChange} controlId="formBasicPronouns">
-                        <Form.Label id='create-account form-label pronouns'>Gender</Form.Label>
-                        <Form.Control id='pronouns' type="text" placeholder=" (Optional) What is your gender identity, if any?"  />
+                    <Form.Group id='create-account form-group gender' onChange={this.handleInputChange} controlId="formBasicPronouns">
+                        <Form.Label id='create-account form-label gender'>Gender</Form.Label>
+                        <Form.Control id='gender' type="text" placeholder=" (Optional) What is your gender identity, if any?"  />
                     </Form.Group>
 
                 <Form.Group id='create-account form-group bio' onChange={this.handleInputChange} controlId="formBasicBio">

@@ -110,7 +110,7 @@ export const authenticated = () => {
 }
 export const userPostFetch = user => {
     return dispatch => {
-        return fetch(`${API_URL}users`, {
+        return fetch(`${API_URL}/users`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

@@ -9,12 +9,14 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
-      #byebug
+
       payload = {user_id: @user.id}
       token = encode_token(payload)
       puts token
       render json: {user: @user, jwt: token}
     else
+      #byebug
+
       render json: {errors: user.errors.full_messages}, status: :not_acceptable
     end
   end
@@ -34,7 +36,7 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:username,:pronouns, :firstname, :lastname, :password, :age, :gender, :profileimg)
+      params.require(:user).permit(:username, :pronouns, :firstname, :lastname, :bio, :password, :age, :gender, :profileimg)
     end
 end
 #
